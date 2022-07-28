@@ -1,0 +1,38 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "EasyEditor_ImGui",
+	"Description": "",
+	"Category": "Other",
+	"CreatedBy": "johnche",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "EasyEditor_ImGui",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "Puerts",
+			"Enabled": true
+		},
+		{
+			"Name": "UEImgui",
+			"Enabled": true
+		},
+		{
+			"Name": "EasyEditorPlugin",
+			"Enabled": true
+		}
+	]
+}
