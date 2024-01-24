@@ -6,9 +6,13 @@ public class EasyEditor_ImGui : ModuleRules
 {
 	public EasyEditor_ImGui(ReadOnlyTargetRules Target) : base(Target)
 	{
-		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
-		
-		PublicIncludePaths.AddRange(
+#if UE_5_3_OR_LATER
+        PCHUsage = PCHUsageMode.NoPCHs;
+#else
+        PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
+#endif
+
+        PublicIncludePaths.AddRange(
 			new string[] {
 				// ... add public include paths required here ...
 			}

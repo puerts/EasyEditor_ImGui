@@ -6,16 +6,16 @@
 #include <imgui.h>
 
 #define MakeFunctionWithScriptTypePtr(M, ...)                                                   \
-    [](::puerts::CallbackInfoType info)                                                                          \
-    { ::puerts::FuncCallWrapper<decltype(M), M, false, false>::callWithDefaultValues(info, ##__VA_ARGS__); },    \
-        ::puerts::FuncCallWrapper<decltype(M), M, false, false>::info(puerts::Count(__VA_ARGS__))
+    [](::puerts::PUERTS_BINDING_IMPL::API::CallbackInfoType info)                                                                          \
+    { ::puerts::FuncCallWrapper<puerts::PUERTS_BINDING_IMPL::API, decltype(M), M, false, false>::callWithDefaultValues(info, ##__VA_ARGS__); },    \
+        ::puerts::FuncCallWrapper<puerts::PUERTS_BINDING_IMPL::API, decltype(M), M, false, false>::info(puerts::Count(__VA_ARGS__))
 
 #define MakeFunction_PtrRet(M, ...)                                                    \
-    [](::puerts::CallbackInfoType info)                                                             \
-    { ::puerts::FuncCallWrapper<decltype(M), M, true>::callWithDefaultValues(info, ##__VA_ARGS__); }, \
-        ::puerts::FuncCallWrapper<decltype(M), M, true>::info(puerts::Count(__VA_ARGS__))
+    [](::puerts::PUERTS_BINDING_IMPL::API::CallbackInfoType info)                                                             \
+    { ::puerts::FuncCallWrapper<puerts::PUERTS_BINDING_IMPL::API, decltype(M), M, true>::callWithDefaultValues(info, ##__VA_ARGS__); }, \
+        ::puerts::FuncCallWrapper<puerts::PUERTS_BINDING_IMPL::API, decltype(M), M, true>::info(puerts::Count(__VA_ARGS__))
 
-#define MakeOverloadWithScriptTypePtr(SIGNATURE, M) puerts::FuncCallWrapper<SIGNATURE, M, false, false>
+#define MakeOverloadWithScriptTypePtr(SIGNATURE, M) puerts::FuncCallWrapper<puerts::PUERTS_BINDING_IMPL::API, SIGNATURE, M, false, false>
 
 struct DearImGui
 {
